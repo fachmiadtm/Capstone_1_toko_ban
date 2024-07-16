@@ -11,6 +11,39 @@ list_ban = [
         {'kode':3101,'merek':'Dunlop','nama':'Enasave','tipe':'Eco','ukuran_ban':'15/185/65','stock':6,'harga':645000}
 ]
 
+def main():
+    while True:
+        menu()
+        pilihan = input('\nMasukkan angka Menu yang ingin dijalankan : ')
+        if pilihan.isdigit():
+            pilihan=int(pilihan)
+            if pilihan == 6:
+                while True:
+                    tutup=str(input('\nApakah anda ingin menutup aplikasi? (Y/T) ')).upper()
+                    if tutup== 'Y' or tutup == 'T':
+                        break
+                    else:
+                        print('\nMohon masukkan Y untuk ya, dan T untuk tidak.')
+                if tutup == 'Y':
+                    print('\nAplikasi ditutup.')
+                    break
+                else:
+                    print('\nAplikasi batal ditutup.')
+            elif pilihan == 1:
+                menu_read()     # sort  by, filter
+            elif pilihan == 2:
+                menu_tambah()
+            elif pilihan == 3:
+                menu_delete()   # delete berdasarkan merek/
+            elif pilihan == 4:
+                menu_update()
+            elif pilihan == 5:
+                menu_beli()
+            else:
+                print('\nMohon masukkan angka menu yang tersedia.')
+        else:
+            print('\nMohon masukkan angka menu yang tersedia.')
+
 def menu():
     print('''
                  Selamat Datang di Ban Shop!   ''')
@@ -644,38 +677,6 @@ def part_bayar():
                 break
         print('\nMohon masukkan jumlah uang berupa angka.')
 
-def main():
-    while True:
-        menu()
-        pilihan = input('\nMasukkan angka Menu yang ingin dijalankan : ')
-        if pilihan.isdigit():
-            pilihan=int(pilihan)
-            if pilihan == 6:
-                while True:
-                    tutup=str(input('\nApakah anda ingin menutup aplikasi? (Y/T) ')).upper()
-                    if tutup== 'Y' or tutup == 'T':
-                        break
-                    else:
-                        print('\nMohon masukkan Y untuk ya, dan T untuk tidak.')
-                if tutup == 'Y':
-                    print('\nAplikasi ditutup.')
-                    break
-                else:
-                    print('\nAplikasi batal ditutup.')
-            elif pilihan == 1:
-                menu_read()     # sort  by, filter
-            elif pilihan == 2:
-                menu_tambah()
-            elif pilihan == 3:
-                menu_delete()   # delete berdasarkan merek/
-            elif pilihan == 4:
-                menu_update()
-            elif pilihan == 5:
-                menu_beli()
-            else:
-                print('\nMohon masukkan angka menu yang tersedia.')
-        else:
-            print('\nMohon masukkan angka menu yang tersedia.')
 
 if __name__=='__main__':
     main()
